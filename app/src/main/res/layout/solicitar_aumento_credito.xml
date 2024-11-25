@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F0F8FF">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Solicitud de Aumento de Credito"
+        android:textColor="@color/darkblue"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/dataTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datos Personales"
+        android:textSize="18sp"
+        android:textColor="@color/midnightblue"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+    android:hint="Ingresa tu nombre completo"
+    android:padding="12dp"
+    android:backgroundTint="@color/royalblue"
+    android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/etApellido"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+    android:hint="Ingresa tu apellido"
+    android:padding="12dp"
+    android:backgroundTint="@color/royalblue"
+    android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/etCalle"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+    android:hint="Ingresa tu calle"
+    android:padding="12dp"
+    android:backgroundTint="@color/royalblue"
+    android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/etTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+    android:hint="Ingresa tu teléfono"
+    android:padding="12dp"
+    android:backgroundTint="@color/royalblue"
+    android:layout_marginBottom="10dp"/>
+
+    <!-- Comprobante de Domicilio -->
+    <TextView
+        android:id="@+id/comprobanteTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comprobante de Domicilio (PDF)"
+        android:textSize="18sp"
+        android:textColor="@color/midnightblue"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnComprobante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cargar Comprobante"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/comprobantePreview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Archivo cargado correctamente"
+        android:visibility="gone"
+        android:textSize="14sp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/ineTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Imagen de INE"
+        android:textSize="18sp"
+        android:textColor="@color/midnightblue"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnINE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cargar INE"
+        android:layout_marginBottom="10dp"/>
+
+    <ImageView
+        android:id="@+id/inePreview"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnEnviar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar Solicitud"
+        android:backgroundTint="@color/dodgerblue"/>
+
+</LinearLayout>

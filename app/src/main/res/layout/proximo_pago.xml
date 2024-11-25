@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Título principal -->
+    <TextView
+        android:id="@+id/txtProximoPago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Próximo Pago"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#003366"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+    <!-- Monto a pagar -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Monto a pagar:"
+            android:textSize="16sp"
+            android:textColor="#4682B4"
+            android:gravity="center_vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$1200.00"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#1E90FF"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+
+    <!-- Fecha de vencimiento -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+            android:text="Fecha de vencimiento:"
+            android:textSize="16sp"
+            android:textColor="#4682B4"
+            android:gravity="center_vertical" />
+
+        <TextView
+            android:layout_width="132dp"
+            android:layout_height="wrap_content"
+            android:text="15/11/2024"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#1E90FF"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+
+    <!-- Resumen de la compra -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resumen de la compra:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#4169E1"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- ListView para los productos -->
+    <ListView
+        android:id="@+id/listViewProductos"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:background="#87CEFA" />
+
+    <!-- Botones -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/btnPagarAhora"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_margin="10dp"
+            android:background="@color/royal_blue"
+            android:text="Pagar ahora"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="150dp"
+            android:layout_height="68dp"
+            android:layout_margin="10dp"
+            android:background="@color/midnight_blue"
+            android:text="Cancelar"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>
