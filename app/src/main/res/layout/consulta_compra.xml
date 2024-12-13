@@ -3,74 +3,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
-    android:background="#00B6FA">
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
-    <!-- Título de la consulta de compra -->
+    <!-- Título -->
     <TextView
         android:id="@+id/consulta_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Consulta de Compras"
-        android:textSize="20sp"
-        android:textColor="#FFFFFF"
-        android:padding="10dp"
+        android:textSize="22sp"
+        android:textColor="#2196F3"
+        android:paddingBottom="12dp"
         android:layout_gravity="center"
-        android:fontFamily="sans-serif-medium"/>
+        android:fontFamily="sans-serif-medium" />
 
-    <!-- Detalle de los productos -->
-    <TextView
-        android:id="@+id/detalle_producto"
+    <!-- Contenedor de detalles -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Producto: Camiseta"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-        android:padding="8dp" />
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:elevation="2dp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp">
 
-    <TextView
-        android:id="@+id/detalle_precio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Precio: $25.00"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-        android:padding="8dp" />
+        <!-- Producto -->
+        <TextView
+            android:id="@+id/detalle_producto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Producto: Camiseta"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:paddingBottom="8dp" />
 
-    <TextView
-        android:id="@+id/detalle_cantidad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cantidad: 2"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-        android:padding="8dp" />
+        <!-- Precio -->
+        <TextView
+            android:id="@+id/detalle_precio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Precio: $150.00"
+            android:textSize="16sp"
+            android:textColor="#4CAF50"
+            android:paddingBottom="8dp" />
 
-    <TextView
-        android:id="@+id/detalle_subtotal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Subtotal: $50.00"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-        android:padding="8dp" />
+        <!-- Cantidad -->
+        <TextView
+            android:id="@+id/detalle_cantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad: 2"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:paddingBottom="8dp" />
+
+        <!-- Subtotal -->
+        <TextView
+            android:id="@+id/detalle_subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtotal: $300.00"
+            android:textSize="18sp"
+            android:textColor="#FF5722"
+            android:fontFamily="sans-serif-medium" />
+    </LinearLayout>
 
     <!-- Separador -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#FFFFFF"
-        android:layout_marginVertical="8dp" />
+        android:background="#E0E0E0"
+        android:layout_marginBottom="16dp" />
 
-    <!-- Botón para continuar -->
+    <!-- Botón Continuar -->
     <Button
         android:id="@+id/btn_continuar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Continuar con la Compra"
-        android:textColor="#000000"
-        android:background="@android:color/holo_green_light"
-        android:padding="10dp"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"/>
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#2196F3"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="8dp" />
+
 </LinearLayout>

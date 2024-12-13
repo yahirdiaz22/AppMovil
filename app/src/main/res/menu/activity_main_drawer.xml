@@ -6,27 +6,27 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_consulta_compra"
-            android:icon="@drawable/ic_consulta_compra"
+            android:icon="@drawable/consultacompras"
         android:title="Consulta de Compra" />
 
         <item
             android:id="@+id/nav_consulta_credito"
-            android:icon="@drawable/ic_tarjeta"
+            android:icon="@drawable/consultacredito"
         android:title="Consulta de Crédito" />
 
         <item
             android:id="@+id/nav_pagos_vencidos"
-            android:icon="@drawable/ic_pagos_vencidos"
+            android:icon="@drawable/pagosvencidos"
             android:title="Pagos Vencidos" />
 
         <item
             android:id="@+id/nav_proximo_pago"
-            android:icon="@drawable/ic_calendario"
+            android:icon="@drawable/proximopago"
         android:title="Próximo Pago" />
 
         <item
             android:id="@+id/nav_fecha_corte"
-            android:icon="@drawable/ic_fecha_corte"
+            android:icon="@drawable/corte"
         android:title="Fecha de Corte" />
 
         <item

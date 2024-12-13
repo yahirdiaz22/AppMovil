@@ -15,7 +15,6 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appmovil.databinding.ActivityMainBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 
@@ -24,12 +23,47 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
-    // Lista de productos
     private val productos = listOf(
-        Producto("Camiseta", "Camiseta azul de algodón", 150.0),
-        Producto("Reloj", "Reloj deportivo resistente al agua", 250.0),
-        Producto("Audífonos", "Audífonos inalámbricos con cancelación de ruido", 800.0)
+        Producto(
+            nombre = "Camiseta",
+            descripcion = "Camisa de color Azul.",
+            precio = 150.0,
+            imagenUrl = R.drawable.camisa
+        ),
+        Producto(
+            nombre = "Reloj Cassio",
+            descripcion = "Rolex marca Cassio 25k.",
+            precio = 2000.0,
+            imagenUrl = R.drawable.cassio
+        ),
+        Producto(
+            nombre = "Televisor LED",
+            descripcion = "Televisor LED de 55 pulgadas con resolución 4K UHD.",
+            precio = 899.0,
+            imagenUrl = R.drawable.televisor
+        ),
+        Producto(
+            nombre = "Laptop Gaming",
+            descripcion = "Laptop gaming de 15 pulgadas, procesador Intel i7.",
+            precio = 1299.0,
+            imagenUrl = R.drawable.laptop
+        ),
+        Producto(
+            nombre = "Reloj Inteligente",
+            descripcion = "Reloj inteligente con monitoreo de salud.",
+            precio = 1200.0,
+            imagenUrl = R.drawable.reloj
+        ),
+        Producto(
+            nombre = "Zapatos Deportivos",
+            descripcion = "Zapatos deportivos cómodos.",
+            precio = 775.0,
+            imagenUrl = R.drawable.zapatos
+        )
     )
+
+    // Lista mutable para el carrito
+    private val carrito = mutableListOf<Producto>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,9 +73,18 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        // Configurar el FloatingActionButton
+        // Configurar el FloatingActionButton para abrir el carrito
         binding.appBarMain.fab.setOnClickListener {
-            Toast.makeText(this, "Carrito abierto", Toast.LENGTH_SHORT).show()
+            // Verificar el total del carrito
+            val totalCarrito = carrito.sumByDouble { it.precio }
+            if (totalCarrito > 3000) {
+                Toast.makeText(this, "¡Se excedió de su crédito de $3000!", Toast.LENGTH_LONG).show()
+            } else {
+                // Abrir el carrito (actualiza el carrito y verifica si excede el límite)
+                val intent = Intent(this, CarritoActivity::class.java)
+                intent.putParcelableArrayListExtra("CARRITO", ArrayList(carrito))  // Pasa la lista del carrito
+                startActivity(intent)
+            }
         }
 
         // Configurar Navigation Drawer
@@ -106,7 +149,14 @@ class MainActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.recycler_view_productos)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = ProductoAdapter(productos) { producto ->
-            Snackbar.make(recyclerView, "Añadido al carrito: ${producto.nombre}", Snackbar.LENGTH_SHORT).show()
+            // Verificar si el producto se puede agregar al carrito
+            val totalCarrito = carrito.sumByDouble { it.precio }
+            if (totalCarrito + producto.precio > 3000) {
+                Toast.makeText(this, "¡No se puede agregar más, se excede el crédito de $3000!", Toast.LENGTH_LONG).show()
+            } else {
+                carrito.add(producto)  // Agregar el producto al carrito
+                Snackbar.make(recyclerView, "Añadido al carrito: ${producto.nombre}", Snackbar.LENGTH_SHORT).show()
+            }
         }
     }
 

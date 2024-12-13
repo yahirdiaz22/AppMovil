@@ -1,37 +1,42 @@
 package com.example.appmovil
 
-import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
-import android.widget.Toast
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class ConsultaCredito : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.consulta_credito)
 
-        // Encuentra el botón usando su ID
-        val btnContinuar = findViewById<Button>(R.id.btnRegresar)
+        // Encuentra los elementos del layout
+        val btnConsultarCredito = findViewById<Button>(R.id.btnConsultarCredito)
+        val llDetallesCredito = findViewById<LinearLayout>(R.id.llDetallesCredito)
+        val tvCreditoInicial = findViewById<TextView>(R.id.tvCreditoInicial)
+        val tvSaldoPendiente = findViewById<TextView>(R.id.tvSaldoPendiente)
+        val tvFechaVencimiento = findViewById<TextView>(R.id.tvFechaVencimiento)
+        val tvMontoTotal = findViewById<TextView>(R.id.tvMontoTotal)
+        val btnRegresar = findViewById<Button>(R.id.btnRegresar)
 
-        // Obtén los datos de la compra desde el Intent
-        val producto = intent.getStringExtra("PRODUCTO")
-        val monto = intent.getStringExtra("MONTO")
-        val fecha = intent.getStringExtra("FECHA")
+        // Configurar el clic en el botón de consultar crédito
+        btnConsultarCredito.setOnClickListener {
+            // Mostrar los detalles de crédito
+            llDetallesCredito.visibility = View.VISIBLE
 
-        // Aquí podrías mostrar los datos en tu interfaz si es necesario
-        Toast.makeText(this, "Producto: $producto\nMonto: $monto\nFecha: $fecha", Toast.LENGTH_LONG).show()
+            // Aquí puedes actualizar los TextViews con los datos reales si es necesario
+            tvCreditoInicial.text = "Crédito Inicial: $3000.00"
+            tvSaldoPendiente.text = "Saldo Pendiente: $1500.00"
+            tvFechaVencimiento.text = "Fecha de Vencimiento: 2024-12-31"
+            tvMontoTotal.text = "Monto Total: $4500.00"
+        }
 
-        // Configura el listener para el botón
-        btnContinuar.setOnClickListener {
-            // Muestra el mensaje de éxito con un Toast
-            Toast.makeText(this, "Compra realizada con éxito", Toast.LENGTH_SHORT).show()
-
-            // Redirige al usuario a la actividad principal
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-
-            // Finaliza la actividad actual para evitar volver con el botón atrás
+        // Configurar el clic en el botón de regresar
+        btnRegresar.setOnClickListener {
+            // Terminar la actividad y regresar a la anterior
             finish()
         }
     }

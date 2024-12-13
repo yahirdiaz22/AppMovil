@@ -1,52 +1,69 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- res/layout/activity_consulta_credito.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    android:background="#00BCD4">
+    android:padding="16dp">
 
-    <!-- Título -->
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tus Compras"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="20dp"
-        android:textColor="#FFFFFF"/>
-
-    <!-- Lista de Compras -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerCompras"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scrollbars="vertical"
-        android:padding="8dp"
-        android:background="#FFFFFF"/>
-
-    <!-- Mensaje de Error o Sin Resultados -->
-    <TextView
-        android:id="@+id/txtSinCompras"
+    <!-- Botón para consultar crédito -->
+    <Button
+        android:id="@+id/btnConsultarCredito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No tienes compras registradas."
-        android:textSize="16sp"
-        android:textColor="#FF0000"
-        android:gravity="center"
-        android:visibility="gone"
-        android:layout_marginBottom="20dp"/>
+        android:text="Consultar Crédito"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
 
-    <!-- Botón Regresar -->
-    <Button
-        android:id="@+id/btnRegresar"
+    <!-- El contenedor donde se mostrarán los detalles del crédito -->
+    <LinearLayout
+        android:id="@+id/llDetallesCredito"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Volver"
-        android:textSize="16sp"
-        android:background="#1D66C5"
-        android:textColor="#FFFFFF"/>
-</LinearLayout>
+        android:orientation="vertical"
+        android:layout_below="@id/btnConsultarCredito"
+        android:visibility="gone"
+        android:layout_marginTop="20dp">
+
+        <!-- Detalles de crédito -->
+        <TextView
+            android:id="@+id/tvCreditoInicial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crédito Inicial: $3000.00"
+            android:textSize="18sp"
+            android:textColor="#4CAF50"/>
+
+        <TextView
+            android:id="@+id/tvSaldoPendiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo Pendiente: $1500.00"
+            android:textSize="18sp"
+            android:textColor="#FF5722"/>
+
+        <TextView
+            android:id="@+id/tvFechaVencimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha de Vencimiento: 2024-12-31"
+            android:textSize="18sp"
+            android:textColor="#FF9800"/>
+
+        <TextView
+            android:id="@+id/tvMontoTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monto Total: $4500.00"
+            android:textSize="18sp"
+            android:textColor="#2196F3"/>
+    </LinearLayout>
+
+    <!-- Botón para regresar -->
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        android:layout_below="@id/llDetallesCredito"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+</RelativeLayout>
